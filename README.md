@@ -1,0 +1,1 @@
+# bootloader-bitfarag-verseny-2025-2
