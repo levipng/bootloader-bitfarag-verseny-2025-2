@@ -1,6 +1,6 @@
 // Globális változók
 let matrix = [];
-let gombok = [];
+let gombElemek = [];
 
 // A gombnyomás függvény
 function gombnyomas(sor, oszlop) {
@@ -12,8 +12,8 @@ function gombnyomas(sor, oszlop) {
 function frissitGombok() {
     for (let sor = 0; sor < 12; sor++) {
         for (let oszlop = 0; oszlop < 12; oszlop++) {
-            if (gombok[sor] && gombok[sor][oszlop]) {
-                gombok[sor][oszlop].textContent = matrix[sor][oszlop];
+            if (gombElemek[sor] && gombElemek[sor][oszlop]) {
+                gombElemek[sor][oszlop].textContent = matrix[sor][oszlop];
             }
         }
     }
@@ -33,7 +33,7 @@ function inicializalMatrix() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const buttonGrid = document.getElementById('gombok');
+    const gombokContainer = document.getElementById('gombok');
     const totalButtons = 144;
     const columns = 12;
     
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Gombok tömb inicializálása
     for (let i = 0; i < 12; i++) {
-        gombok[i] = [];
+        gombElemek[i] = [];
     }
     
     // Gombok generálása
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.textContent = matrix[sor][oszlop];
         
         // Gomb elmentése a tömbben
-        gombok[sor][oszlop] = button;
+        gombElemek[sor][oszlop] = button;
         
         // ID-k beállítása
         button.setAttribute('data-serial-id', `button-${i}`);
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Sortörés minden 12. gomb után
         if (i > 0 && i % columns === 0) {
-            buttonGrid.appendChild(document.createElement('br'));
+            gombokContainer.appendChild(document.createElement('br'));
         }
         
         // Kattintás esemény - meghívja a gombnyomas függvényt
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Gomb hozzáadása
-        buttonGrid.appendChild(button);
+        gombokContainer.appendChild(button);
     }
     
     console.log(`${totalButtons} gomb generálva sikeresen!`);
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mátrix módosítása példaként
         for (let sor = 0; sor < 12; sor++) {
             for (let oszlop = 0; oszlop < 12; oszlop++) {
-                matrix[sor][oszlop] = `[${sor}][${oszlop}]`;
+                matrix[sor][oszlop] = `(${sor},${oszlop})`;
             }
         }
         frissitGombok();
