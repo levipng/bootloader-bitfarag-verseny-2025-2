@@ -1,16 +1,23 @@
+/* Alap stílusok a gomboknak */
 #gombok {
     display: grid;
     grid-template-columns: repeat(12, 40px);
     grid-template-rows: repeat(12, 40px);
     gap: 2px;
     width: max-content;
+    margin: 20px auto;
+    border: 2px solid #333;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
 }
 
+/* Gomb alap stílus - NEM látszik a tartalom */
 button {
     width: 40px;
     height: 40px;
-    background-color: #ddd;
-    border: 1px solid #999;
+    background-color: #4a6fa5; /* Alap háttérszín */
+    border: 1px solid #2c3e50;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -19,10 +26,20 @@ button {
     padding: 0;
     margin: 0;
     position: relative;
+    border-radius: 3px;
+    transition: all 0.3s ease; /* Sima átmenet hover-ra */
 }
 
+/* Gomb hover effekt - NEM látszik a tartalom */
+button:hover {
+    background-color: #6a8cc7; /* Világosabb kék hover-re */
+    transform: scale(1.05); /* Enyhén megnöveljük */
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Árnyék hozzáadása */
+}
+
+/* Tartalom alapból rejtve */
 button .content {
-    display: none; /* Kezdetben elrejtjük a tartalmat */
+    display: none;
     font-size: 10px;
     line-height: 1;
     text-align: center;
@@ -32,14 +49,42 @@ button .content {
     height: 100%;
 }
 
+/* Képek méretezése */
 button .content img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
 
+/* REVEALED állapot - látszik a tartalom */
+button.revealed {
+    background-color: #e8f4f8; /* Világos kék háttér, ha látszik a tartalom */
+    border-color: #3498db;
+}
+
+/* REVEALED állapot hover effekt */
+button.revealed:hover {
+    background-color: #d1e7f5; /* Sötétebb kék hover-re */
+    transform: scale(1.03); /* Kisebb nagyítás, mint a nem revealed gomboknál */
+}
+
+/* REVEALED állapotban megjelenítjük a tartalmat */
 button.revealed .content {
-    display: flex; /* Megjelenítjük a tartalmat */
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Opcionális: Szöveges tartalom stílusa, ha nem kép */
+button.revealed .content:not(:has(img)) {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Fejléc stílus */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
 }
