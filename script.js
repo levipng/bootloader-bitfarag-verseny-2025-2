@@ -6,6 +6,7 @@ for (let i = 0; i < 12; i++) {
     }
 }
 matrix[2][1] = '<img src="0.jpg">';
+matrix[2][3] = '<p>cig</p>';
 
 const gombokDiv = document.getElementById('gombok');
 
