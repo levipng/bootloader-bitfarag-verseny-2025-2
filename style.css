@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12x12-es Mátrix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>12x12-es Mátrix</h1>
+    <div id="gombok"></div>
+    <script src="script.js"></script>
+</body>
+</html>
