@@ -1,21 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const gombokContainer = document.getElementById('gombok');
-    const gombokSzama = 144;
-    
-    for (let i = 0; i < gombokSzama; i++) {
-        // Gomb létrehozása
-        const gomb = document.createElement('button');
-        gomb.textContent = i;
-        gomb.id = `gomb-${i}`;
-        
-        // Kattintás esemény
-        gomb.addEventListener('click', function() {
-            console.log(`Megnyomtad a ${i} számú gombot`);
-        });
-        
-        // Gomb hozzáadása a containerhez
-        gombokContainer.appendChild(gomb);
+let matrix = Array(12);
+for (let i = 0; i < 12; i++) {
+    matrix[i] = Array(12);
+    for (let j = 0; j < 12; j++) {
+        matrix[i][j] = i * 12 + j;
     }
-    
-    console.log(`${gombokSzama} gomb generálva sikeresen!`);
-});
+}
+matrix[2][1] = '<img src="0.jpg">';
+
+const gombokDiv = document.getElementById('gombok');
+
+for (let i = 0; i < 12; i++) {
+    for (let j = 0; j < 12; j++) {
+        const gomb = document.createElement('button');
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'content';
+        contentDiv.innerHTML = matrix[i][j];
+        
+        gomb.appendChild(contentDiv);
+        
+        gomb.onclick = function() {
+            this.classList.add('revealed');
+        };
+        
+        gombokDiv.appendChild(gomb);
+    }
+}
