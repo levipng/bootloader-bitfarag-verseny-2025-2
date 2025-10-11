@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="hu">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>űrhajós jatek</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12x12-es Mátrix</title>
+    <style>
+        #gombok {
+            display: grid;
+            grid-template-columns: repeat(12, 40px);
+            grid-template-rows: repeat(12, 40px);
+            gap: 2px;
+            width: max-content;
+        }
+        
+        button {
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            border: 1px solid #999;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        button .content {
+            display: none; /* Kezdetben elrejtjük a tartalmat */
+            font-size: 10px;
+            line-height: 1;
+            text-align: center;
+            word-break: break-all;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        
+        button .content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        button.revealed .content {
+            display: flex; /* Megjelenítjük a tartalmat */
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-
 <body>
-<div class="table">
-    <div class="row">
-        <div class="col12 d-flex justify-content-center mb-4">
-            <h1>Torpedo</h1>
-        </div>
-        <div class="col12 d-flex justify-content-center mb-4">
-            <p>Találd meg a 7 űrhajót a pályán!</p>
-        </div>
-    </div>
-    <div class="col12" id="gombok">
-
-    </div>
-
-</div>
+    <h1>12x12-es Mátrix</h1>
+    <div id="gombok"></div>
+    <script src="script.js"></script>
 </body>
-<script src="jquery-3.7.1.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="script.js"></script>
-
-
 </html>
-
-
-
-
-
