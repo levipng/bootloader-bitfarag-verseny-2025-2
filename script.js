@@ -9,7 +9,6 @@ start();
 function start(){
     initMatrix();
     generalas();
-    test();
     gombbetoltes();
 }
 
@@ -27,17 +26,17 @@ function generalas(){
     let gen = 0;
     let gena = 0;
     let genb = 0;
-    while(gen < 28){
-        matrix[Math.floor(Math.random() * 12)][Math.floor(Math.random() * 12)] = 0;
-        ++gen;
+    for(let a = 0;a<28;++a){
+        while(1){
+            let b = Math.floor(Math.random() * 12)
+            let c = Math.floor(Math.random() * 12)
+            if (matrix[b][c]!=0){
+                matrix[b][c] = 0;
+                break;
+            }
+        }
     }
 }
-
-function test(){
-    matrix[2][1] = '<img src="0.jpg">';
-    matrix[2][3] = '<p>cig</p>';
-    matrix[4][4] = '0';
-};
 
 function gombbetoltes(){
     for (let i = 0; i < 12; i++) {
