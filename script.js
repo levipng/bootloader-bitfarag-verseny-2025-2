@@ -25,6 +25,8 @@ function initMatrix(){
 
 function generalas(){
     let gen = 0;
+    let gena = 0;
+    let genb = 0;
     while(gen < 29){
         matrix[Math.floor(Math.random() * 12)][Math.floor(Math.random() * 12)] = 0;
         ++gen;
@@ -50,7 +52,7 @@ function gombbetoltes(){
             
             if (matrix[i][j]==0){
                 gomb.addEventListener('click', function handler(event) {
-                    this.classList.add('revealed');
+                    this.classList.add('raketa');
                     this.disabled = true;
                     urhajokiiro();
                     gombnyomas();
