@@ -57,7 +57,7 @@ function gombbetoltes(){
 
 function gombnyomas(){
     ++megnyomottgombok;
-    document.getElementById("lepsek").innerText = "Megtett lépések: " + megnyomottgombok;
+    document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombok;
 };
 
 function urhajokiiro(){
