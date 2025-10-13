@@ -11,10 +11,9 @@ function start(){
     let urhajoV = 0;
     let meglevoV = 0;
     let megnyomottgombok = 0;
+    test();
     gombbetoltes();
 };
-
-test();
 
 function test(){
     matrix[2][1] = '<img src="0.jpg">';
