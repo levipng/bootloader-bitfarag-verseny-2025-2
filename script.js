@@ -40,11 +40,13 @@ function gombbetoltes(){
                     this.classList.add('revealed');
                     this.disabled = true;
                     urhajokiiro();
+                    gombnyomas();
                 }, { once: true });
             } else {
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed');
                     this.disabled = true;
+                    gombnyomas();
                 }, { once: true });
             }
         
