@@ -27,3 +27,5 @@ for (let i = 0; i < 12; i++) {
         gombokDiv.appendChild(gomb);
     }
 }
+
+let cigany = "29%"
