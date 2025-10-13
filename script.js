@@ -28,4 +28,6 @@ for (let i = 0; i < 12; i++) {
     }
 }
 
-let cigany = "29%"
+let meglevoV = 70;
+document.getElementById("progress").style.width = value + "%";
+document.getElementById("progress").textContent = value + "%";
