@@ -23,9 +23,6 @@ function initMatrix(){
 }
 
 function generalas(){
-    let gen = 0;
-    let gena = 0;
-    let genb = 0;
     for(let a = 0;a<28;++a){
         while(1){
             let b = Math.floor(Math.random() * 12)
