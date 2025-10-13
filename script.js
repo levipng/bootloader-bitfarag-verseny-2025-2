@@ -54,7 +54,8 @@ function gombbetoltes(){
 };
 
 function gombnyomas(){
-    ++megnyomottgombok
+    ++megnyomottgombok;
+    document.getElementById("lepsek").innerText = "Megtett lépések: " + megnyomottgombok;
 };
 
 function urhajokiiro(){
