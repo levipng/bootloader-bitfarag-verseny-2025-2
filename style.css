@@ -129,6 +129,8 @@ button{
 }
 
 .raketa{
-background-color: orangered;
-
+    background-color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
