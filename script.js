@@ -24,9 +24,10 @@ function matrix(){
 }
 
 function generalas(){
-    let gen = 0
+    let gen = 0;
     while(gen < 28){
         matrix[Math.floor(Math.random() * 12)][Math.floor(Math.random() * 12)] = 0;
+        ++gen;
     }
 }
 
