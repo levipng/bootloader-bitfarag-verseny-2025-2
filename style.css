@@ -6,7 +6,7 @@
     gap: 2px;
     width: max-content;
     margin: 20px auto;
-    border: 2px solid #333;
+    border: 2px solid hsla(201, 71%, 39%, 0.884);
     padding: 10px;
     background-color: #f0f0f0;
     border-radius: 5px;
@@ -14,7 +14,7 @@
 
 /* Gomb alap stílus - NEM látszik a tartalom */
 button {
-    background-color: #4a6fa5;
+    background-color: #092550;
     /* Alap háttérszín */
     border: 1px solid #2c3e50;
     cursor: pointer;
@@ -29,6 +29,8 @@ button {
     transition: all 0.3s ease;
     /* Sima átmenet hover-ra */
 }
+
+
 
 /* Gomb hover effekt - NEM látszik a tartalom */
 button:hover {
@@ -123,4 +125,10 @@ button{
 .neu-button:focus {
     outline: none;
     box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+bg{
+color: rgb(255, 60, 0);
+
+
 }
