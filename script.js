@@ -2,10 +2,12 @@ const gombokDiv = document.getElementById('gombok');
 let urhajoV = 0;
 let meglevoV = 0;
 let megnyomottgombok = 0;
+let matrix
 
 start();
+
 function start(){
-    let matrix = Array(12);
+    matrix = Array(12);
     for (let i = 0; i < 12; i++) {
         matrix[i] = Array(12);
         for (let j = 0; j < 12; j++) {
