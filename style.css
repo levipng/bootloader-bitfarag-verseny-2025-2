@@ -16,7 +16,8 @@
 button {
     width: 40px;
     height: 40px;
-    background-color: #4a6fa5; /* Alap háttérszín */
+    background-color: #4a6fa5;
+    /* Alap háttérszín */
     border: 1px solid #2c3e50;
     cursor: pointer;
     display: flex;
@@ -27,14 +28,18 @@ button {
     margin: 0;
     position: relative;
     border-radius: 3px;
-    transition: all 0.3s ease; /* Sima átmenet hover-ra */
+    transition: all 0.3s ease;
+    /* Sima átmenet hover-ra */
 }
 
 /* Gomb hover effekt - NEM látszik a tartalom */
 button:hover {
-    background-color: #6a8cc7; /* Világosabb kék hover-re */
-    transform: scale(1.05); /* Enyhén megnöveljük */
-    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Árnyék hozzáadása */
+    background-color: #6a8cc7;
+    /* Világosabb kék hover-re */
+    transform: scale(1.05);
+    /* Enyhén megnöveljük */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Árnyék hozzáadása */
 }
 
 /* Tartalom alapból rejtve */
@@ -58,14 +63,17 @@ button .content img {
 
 /* REVEALED állapot - látszik a tartalom */
 button.revealed {
-    background-color: #e8f4f8; /* Világos kék háttér, ha látszik a tartalom */
+    background-color: #e8f4f8;
+    /* Világos kék háttér, ha látszik a tartalom */
     border-color: #3498db;
 }
 
 /* REVEALED állapot hover effekt */
 button.revealed:hover {
-    background-color: #d1e7f5; /* Sötétebb kék hover-re */
-    transform: scale(1.03); /* Kisebb nagyítás, mint a nem revealed gomboknál */
+    background-color: #d1e7f5;
+    /* Sötétebb kék hover-re */
+    transform: scale(1.03);
+    /* Kisebb nagyítás, mint a nem revealed gomboknál */
 }
 
 /* REVEALED állapotban megjelenítjük a tartalmat */
@@ -87,4 +95,29 @@ h1 {
     color: #2c3e50;
     font-family: Arial, sans-serif;
     margin-bottom: 20px;
+}
+
+
+
+/* Levi */
+
+.neu-button {
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px 40px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+}
+
+.neu-button:hover {
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+.neu-button:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
