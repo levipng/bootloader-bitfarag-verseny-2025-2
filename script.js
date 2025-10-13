@@ -27,7 +27,7 @@ function generalas(){
     let gen = 0;
     let gena = 0;
     let genb = 0;
-    while(gen < 29){
+    while(gen < 28){
         matrix[Math.floor(Math.random() * 12)][Math.floor(Math.random() * 12)] = 0;
         ++gen;
     }
@@ -51,17 +51,14 @@ function gombbetoltes(){
             gomb.appendChild(contentDiv);
             
             if (matrix[i][j]==0){
-                // show rocket image in the content div (use correct path)
                 contentDiv.innerHTML = '<img src="img/rocket.png">';
                 gomb.addEventListener('click', function handler(event) {
-                    // add both revealed (to show .content) and raketa (styling) classes
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
                     urhajokiiro();
                     gombnyomas();
                 }, { once: true });
             } else {
-                // numbered cell: keep the content (a number or text) and mark with 'number' class when revealed
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
