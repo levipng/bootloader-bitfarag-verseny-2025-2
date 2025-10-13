@@ -2,11 +2,18 @@ const gombokDiv = document.getElementById('gombok');
 let urhajoV = 0;
 let meglevoV = 0;
 let megnyomottgombok = 0;
-let matrix
+let matrix;
 
 start();
 
 function start(){
+    matrix();
+    generalas();
+    test();
+    gombbetoltes();
+};
+
+function matrix(){
     matrix = Array(12);
     for (let i = 0; i < 12; i++) {
         matrix[i] = Array(12);
@@ -14,9 +21,14 @@ function start(){
             matrix[i][j] = i * 12 + j;
         }
     }
-    test();
-    gombbetoltes();
-};
+}
+
+function generalas(){
+    let gen = 0
+    while(gen < 28){
+        matrix[Math.floor(Math.random() * 12)][Math.floor(Math.random() * 12)] = 0;
+    }
+}
 
 function test(){
     matrix[2][1] = '<img src="0.jpg">';
