@@ -1,3 +1,8 @@
+const gombokDiv = document.getElementById('gombok');
+let urhajoV = 0;
+let meglevoV = 0;
+let megnyomottgombok = 0;
+
 start();
 function start(){
     let matrix = Array(12);
@@ -7,10 +12,6 @@ function start(){
             matrix[i][j] = i * 12 + j;
         }
     }
-    const gombokDiv = document.getElementById('gombok');
-    let urhajoV = 0;
-    let meglevoV = 0;
-    let megnyomottgombok = 0;
     test();
     gombbetoltes();
 };
