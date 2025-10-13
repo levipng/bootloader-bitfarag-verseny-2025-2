@@ -132,7 +132,7 @@ button{
 }
 
 .neu-button {
-    background-color: #e0e0e0;
+    background-color: #4480e0;
     border-radius: 50px;
     box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
     color: #256b8e;
@@ -157,4 +157,22 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
