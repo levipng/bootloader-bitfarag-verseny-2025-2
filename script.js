@@ -52,7 +52,7 @@ function gombbetoltes(){
             
             if (matrix[i][j]==0){
                 // show rocket image in the content div (use correct path)
-                contentDiv.innerHTML = '<img src="./rocket.png">';
+                contentDiv.innerHTML = '<img src="img/rocket.png">';
                 gomb.addEventListener('click', function handler(event) {
                     // add both revealed (to show .content) and raketa (styling) classes
                     this.classList.add('revealed', 'raketa');
@@ -61,8 +61,9 @@ function gombbetoltes(){
                     gombnyomas();
                 }, { once: true });
             } else {
+                // numbered cell: keep the content (a number or text) and mark with 'number' class when revealed
                 gomb.addEventListener('click', function handler(event) {
-                    this.classList.add('revealed');
+                    this.classList.add('revealed', 'number');
                     this.disabled = true;
                     gombnyomas();
                 }, { once: true });

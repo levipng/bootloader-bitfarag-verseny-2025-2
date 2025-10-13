@@ -62,10 +62,34 @@ button .content img {
 }
 
 /* REVEALED állapot - látszik a tartalom */
+/* Base revealed style (defaults for any revealed button) */
 button.revealed {
     background-color: #e8f4f8;
-    /* Világos kék háttér, ha látszik a tartalom */
     border-color: #3498db;
+}
+
+/* Numbered revealed: show number with clear background and bold text */
+button.revealed.number {
+    background-color: #fff7e6; /* light warm background */
+    border-color: #f1c40f; /* yellow border */
+}
+
+button.revealed.number .content:not(:has(img)) {
+    color: #7b3f00;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* Rocket revealed: strong colored button and center the image */
+button.revealed.raketa {
+    background-color: orangered;
+    border-color: #b03a2e;
+}
+
+button.revealed.raketa .content img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 }
 
 /* REVEALED állapot hover effekt */
