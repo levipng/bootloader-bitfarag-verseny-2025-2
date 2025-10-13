@@ -28,6 +28,8 @@ for (let i = 0; i < 12; i++) {
     }
 }
 
-let meglevoV = 70;
+let kockaV = 5
+
+let meglevoV = ((kockaV/28)*100);
 document.getElementById("meglevo").style.width = meglevoV + "%";
 document.getElementById("meglevo").innerText = meglevoV + "%";
