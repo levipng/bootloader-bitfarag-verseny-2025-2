@@ -127,8 +127,8 @@ button{
 .neu-button {
     background-color: #4480e0;
     border-radius: 50px;
-    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-    color: #256b8e;
+    box-shadow: inset 4px 4px 10px #091239, inset -4px -4px 10px #142b4b;
+    color: #ffffff;
     cursor: pointer;
     font-size: 18px;
     padding: 15px 40px;
@@ -168,4 +168,9 @@ button{
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+}
+.background{
+background-color:darkred;
+box-shadow: inset 40px 40px 10px #88470a, inset -4px -4px 10px #371982;
+
 }
