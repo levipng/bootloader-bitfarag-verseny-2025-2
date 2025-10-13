@@ -29,5 +29,5 @@ for (let i = 0; i < 12; i++) {
 }
 
 let meglevoV = 70;
-document.getElementById("progress").style.width = value + "%";
-document.getElementById("progress").textContent = value + "%";
+document.getElementById("progress").style.width = meglevoV + "%";
+document.getElementById("progress").textContent = meglevoV + "%";
