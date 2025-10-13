@@ -52,7 +52,6 @@ function gombbetoltes(){
 
 function gombnyomas(){
     ++megnyomottgombok
-
 };
 
 function urhajokiiro(){
