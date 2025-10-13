@@ -70,7 +70,7 @@ button.revealed {
 
 /* REVEALED állapot hover effekt */
 button.revealed:hover {
-    background-color: #d1e7f5;
+    background-color: #294556;
     /* Sötétebb kék hover-re */
     transform: scale(1.03);
     /* Kisebb nagyítás, mint a nem revealed gomboknál */
@@ -81,6 +81,7 @@ button.revealed .content {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 /* Opcionális: Szöveges tartalom stílusa, ha nem kép */
@@ -110,7 +111,7 @@ button{
     background-color: #e0e0e0;
     border-radius: 50px;
     box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-    color: #4d4d4d;
+    color: #256b8e;
     cursor: pointer;
     font-size: 18px;
     padding: 15px 40px;
@@ -127,8 +128,7 @@ button{
     box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
-bg{
-color: rgb(255, 60, 0);
-
+.raketa{
+background-color: orangered;
 
 }
