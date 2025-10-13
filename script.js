@@ -38,12 +38,16 @@ function gombbetoltes(){
 
             if (matrix[i][j]==0){
                 gomb.onclick = function() {
-                    this.classList.add('revealed');
+                    let a = 0
+                    if (a==0){
+                        a = 1
+                        this.classList.add('revealed');
+                        urhajokiiro();
+                    }
                 };
             } else {
                 gomb.onclick = function() {
                     this.classList.add('revealed');
-                    urhajokiiro();
                 };
             }
         
