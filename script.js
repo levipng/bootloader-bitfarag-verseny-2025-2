@@ -51,6 +51,7 @@ function gombbetoltes(){
             gomb.appendChild(contentDiv);
             
             if (matrix[i][j]==0){
+                matrix[i][j].innerHTML = '<img src="./rocket.png">'
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('raketa');
                     this.disabled = true;
