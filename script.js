@@ -28,8 +28,8 @@ for (let i = 0; i < 12; i++) {
     }
 }
 
-let kockaV = 5
+let negyzetV = 5
 
-let meglevoV = ((kockaV/28)*100);
+let meglevoV = ((negyzetV/28)*100);
 document.getElementById("meglevo").style.width = meglevoV + "%";
-document.getElementById("meglevo").innerText = meglevoV + "%";
+document.getElementById("meglevo").innerText = negyzetVV;
