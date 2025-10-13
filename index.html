@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12x12-es Mátrix</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>12x12-es Mátrix</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col12">
+                <h1>12x12-es Mátrix</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col12">
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 100%">100%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col4"></div>
+        <div class="col4"></div>
+        <div class="col4"></div>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+    </div>
     <p id="lepesek">lepsek</p>
     <p id="hatrlepesek"></p>
     <button id="uj">új</button>
     <button id="mod">játékmód</button>
     <div id="gombok"></div>
-    <script src="script.js"></script>
 </body>
+
+<script src="jquery-3.7.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="script.js"></script>
+
 </html>
