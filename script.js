@@ -23,7 +23,7 @@ function initMatrix(){
 }
 
 function generalas(){
-    for(let a = 0;a<28;++a){
+    for(let a = 0;a<27;++a){
         while(1){
             let b = Math.floor(Math.random() * 12)
             let c = Math.floor(Math.random() * 12)
