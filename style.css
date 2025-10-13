@@ -92,13 +92,6 @@ button.revealed.raketa .content img {
     object-fit: contain;
 }
 
-/* REVEALED állapot hover effekt */
-button.revealed:hover {
-    background-color: #294556;
-    /* Sötétebb kék hover-re */
-    transform: scale(1.03);
-    /* Kisebb nagyítás, mint a nem revealed gomboknál */
-}
 
 /* REVEALED állapotban megjelenítjük a tartalmat */
 button.revealed .content {
