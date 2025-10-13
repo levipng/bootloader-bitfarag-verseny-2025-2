@@ -32,4 +32,4 @@ let negyzetV = 5
 
 let meglevoV = ((negyzetV/28)*100);
 document.getElementById("meglevo").style.width = meglevoV + "%";
-document.getElementById("meglevo").innerText = negyzetVV;
+document.getElementById("meglevo").innerText = negyzetV;
