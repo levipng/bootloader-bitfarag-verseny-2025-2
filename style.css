@@ -101,6 +101,10 @@ h1 {
 
 /* Levi */
 
+button{
+    width: auto;
+}
+
 .neu-button {
     background-color: #e0e0e0;
     border-radius: 50px;
