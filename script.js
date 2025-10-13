@@ -51,9 +51,11 @@ function gombbetoltes(){
             gomb.appendChild(contentDiv);
             
             if (matrix[i][j]==0){
-                matrix[i][j].innerHTML = '<img src="./rocket.png">'
+                // show rocket image in the content div (use correct path)
+                contentDiv.innerHTML = '<img src="./rocket.png">';
                 gomb.addEventListener('click', function handler(event) {
-                    this.classList.add('raketa');
+                    // add both revealed (to show .content) and raketa (styling) classes
+                    this.classList.add('revealed', 'raketa');
                     this.disabled = true;
                     urhajokiiro();
                     gombnyomas();
