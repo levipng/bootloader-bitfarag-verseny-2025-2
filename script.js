@@ -35,20 +35,17 @@ function gombbetoltes(){
             
             gomb.appendChild(contentDiv);
             
-
             if (matrix[i][j]==0){
-                gomb.onclick = function() {
-                    let a = 0
-                    if (a==0){
-                        a = 1
-                        this.classList.add('revealed');
-                        urhajokiiro();
-                    }
-                };
-            } else {
-                gomb.onclick = function() {
+                gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed');
-                };
+                    this.disabled = true;
+                    urhajokiiro();
+                }, { once: true });
+            } else {
+                gomb.addEventListener('click', function handler(event) {
+                    this.classList.add('revealed');
+                    this.disabled = true;
+                }, { once: true });
             }
         
             gombokDiv.appendChild(gomb);
