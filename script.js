@@ -25,7 +25,7 @@ function initMatrix(){
 
 function generalas(){
     let gen = 0;
-    while(gen < 28){
+    while(gen < 29){
         matrix[Math.floor(Math.random() * 12)][Math.floor(Math.random() * 12)] = 0;
         ++gen;
     }
