@@ -280,5 +280,3 @@ function mode(){
         uj();
     }
 };
-
-// Note: dynamic width adjustment removed — using fixed CSS max-width instead.
