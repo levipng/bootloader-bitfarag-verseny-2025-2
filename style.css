@@ -164,7 +164,7 @@ button{
 
 .game-info {
     gap: 20px;
-    flex-wrap: wrap;
+    
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
