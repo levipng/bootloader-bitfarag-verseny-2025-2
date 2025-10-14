@@ -5,7 +5,6 @@ let matrix;
 let urhajoV = 0;
 let meglevoV = 0;
 let megnyomottgombokV = 0;
-let hatralevoV = 0;
 let lephetoV = 20;
 let bealloV = 0;
 
@@ -15,7 +14,6 @@ function uj(){
     urhajoV = 0;
     meglevoV = 0;
     megnyomottgombokV = 0;
-    hatralevoV = 0;
     lephetoV = 20;
     bealloV = 0;
 
@@ -39,7 +37,6 @@ function MatrixGen(){
 };
 
 function generalas(){
-  // biztos alapállapot
   for (let i = 0; i < 12; i++) {
     for (let j = 0; j < 12; j++) {
       matrix[i][j] = 1;
@@ -47,24 +44,16 @@ function generalas(){
   }
 
   const shapes = [
-    // I
     [[0,0],[0,1],[0,2],[0,3]],
-    // O
     [[0,0],[0,1],[1,0],[1,1]],
-    // T
     [[0,1],[1,0],[1,1],[1,2]],
-    // L
     [[0,0],[1,0],[2,0],[2,1]],
-    // J (mirror L)
     [[0,1],[1,1],[2,1],[2,0]],
-    // S
     [[0,1],[0,2],[1,0],[1,1]],
-    // Z
     [[0,0],[0,1],[1,1],[1,2]]
   ];
 
   function rotateShape(shape, r) {
-    // r = 0..3, rotate 90deg r times around origin
     return shape.map(([x,y])=>{
       let nx = x, ny = y;
       for (let k=0;k<r;k++){
@@ -75,10 +64,8 @@ function generalas(){
   }
 
   function canPlace(coords){
-    // coords: array of [r,c]
     for (const [r,c] of coords){
       if (r<0||r>=12||c<0||c>=12) return false;
-      // check 3x3 neighborhood for existing ship cell (0)
       for (let dr=-1; dr<=1; dr++){
         for (let dc=-1; dc<=1; dc++){
           const rr = r+dr, cc = c+dc;
@@ -101,7 +88,6 @@ function generalas(){
 
   outer:
   while (restartCount < MAX_RESTARTS) {
-    // ha újra kell próbálni, resetelődik a mátrix
     for (let i = 0; i < 12; i++) for (let j = 0; j < 12; j++) matrix[i][j] = 1;
 
     let okAll = true;
@@ -112,7 +98,6 @@ function generalas(){
         const rot = Math.floor(Math.random()*4);
         const shapeR = rotateShape(shapes[s], rot);
 
-        // bounding box
         let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
         for (const [x,y] of shapeR){
           if (x < minR) minR = x;
@@ -138,14 +123,13 @@ function generalas(){
       if (!placed){
         okAll = false;
         restartCount++;
-        continue outer; // restart teljes elhelyezés
+        continue outer;
       }
     }
 
-    if (okAll) break; // siker
+    if (okAll) break;
   }
 
-  // ha nagyon sok restart után sem sikerült, eseti fallback: szórt pontok (ritkán lesz szükséges)
   if (restartCount >= MAX_RESTARTS){
     for (let i = 0; i < 12; i++) for (let j = 0; j < 12; j++) matrix[i][j] = 1;
     let count = 0;
@@ -165,7 +149,6 @@ function szamolas() {
   const sor = matrix.length;
   const oszlop = matrix[0].length;
 
-  // dist mátrix létrehozása
   const dist = [];
   for (let i = 0; i < sor; i++) {
     dist[i] = [];
@@ -175,7 +158,6 @@ function szamolas() {
     }
   }
 
-  // Ismételjük, amíg nem változik semmi
   let valtozott = true;
   while (valtozott) {
     valtozott = false;
@@ -197,7 +179,6 @@ function szamolas() {
     }
   }
 
-  // visszaírás az eredeti mátrixba
   for (let i = 0; i < sor; i++) {
     for (let j = 0; j < oszlop; j++) {
       matrix[i][j] = dist[i][j];
@@ -222,21 +203,28 @@ function gombbetoltes(){
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
-                    --lephetoV;
-                    ++megnyomottgombokV;
-                    gombnyomas();
-                    ++urhajoV
-                    urhajokiiro();
-                    plusz();
+
+                    if(lephetoV>0 && urhajoV<28){
+                        --lephetoV;
+                        ++megnyomottgombokV;
+                        gombnyomas();
+                        ++urhajoV
+                        urhajokiiro();
+                        plusz();
+                        ellenor();
+                    }
                 }, { once: true });
             } else {
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
-                    --lephetoV;
-                    ++megnyomottgombokV;
-                    gombnyomas();
-                    plusz();
+                    if(lephetoV>0 && urhajoV<28){
+                        --lephetoV;
+                        ++megnyomottgombokV;
+                        gombnyomas();
+                        plusz();
+                        ellenor();
+                    }
                 }, { once: true });
             }
         
@@ -244,6 +232,16 @@ function gombbetoltes(){
         }
     }
 };
+
+function ellenor(){
+    if(lephetoV<1){
+        alert("Vesztettél!")
+    }
+    if(urhajoV>27){
+        alert("Nyertél!")
+    }
+};
+
 
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
@@ -288,6 +286,7 @@ function mode(){
     var gombok = document.getElementById('gombok');
     if (!gombok) return;
     var w = gombok.getBoundingClientRect().width;
+    console.log('applyGombokWidth: calculated width =', w);
     var els = document.querySelectorAll('.match-gombok-width');
     els.forEach(function (el) {
       el.style.maxWidth = w + 'px';
