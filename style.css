@@ -167,8 +167,9 @@ button{
     align-items: center;
     gap: 20px;
     box-sizing: border-box; 
-    width: 100%; 
-    margin: 0 0 20px 0; 
+    width: 90%;
+    max-width: 600%; 
+    margin: 0 auto 15px auto; 
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
     padding: 6px 15px;
@@ -176,6 +177,7 @@ button{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-weight: 500;
     font-size: 1rem;
+    border-radius: 10px;
 }
 
 
