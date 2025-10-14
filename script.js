@@ -39,16 +39,128 @@ function MatrixGen(){
 };
 
 function generalas(){
-    for(let a = 0;a<27;++a){
-        while(1){
-            let b = Math.floor(Math.random() * 12)
-            let c = Math.floor(Math.random() * 12)
-            if (matrix[b][c]!=0){
-                matrix[b][c] = 0;
-                break;
-            }
-        }
+function generalas(){
+  // biztos alapállapot
+  for (let i = 0; i < 12; i++) {
+    for (let j = 0; j < 12; j++) {
+      matrix[i][j] = 1;
     }
+  }
+
+  const shapes = [
+    // I
+    [[0,0],[0,1],[0,2],[0,3]],
+    // O
+    [[0,0],[0,1],[1,0],[1,1]],
+    // T
+    [[0,1],[1,0],[1,1],[1,2]],
+    // L
+    [[0,0],[1,0],[2,0],[2,1]],
+    // J (mirror L)
+    [[0,1],[1,1],[2,1],[2,0]],
+    // S
+    [[0,1],[0,2],[1,0],[1,1]],
+    // Z
+    [[0,0],[0,1],[1,1],[1,2]]
+  ];
+
+  function rotateShape(shape, r) {
+    // r = 0..3, rotate 90deg r times around origin
+    return shape.map(([x,y])=>{
+      let nx = x, ny = y;
+      for (let k=0;k<r;k++){
+        [nx,ny] = [ny, -nx];
+      }
+      return [nx,ny];
+    });
+  }
+
+  function canPlace(coords){
+    // coords: array of [r,c]
+    for (const [r,c] of coords){
+      if (r<0||r>=12||c<0||c>=12) return false;
+      // check 3x3 neighborhood for existing ship cell (0)
+      for (let dr=-1; dr<=1; dr++){
+        for (let dc=-1; dc<=1; dc++){
+          const rr = r+dr, cc = c+dc;
+          if (rr>=0 && rr<12 && cc>=0 && cc<12){
+            if (matrix[rr][cc] === 0) return false;
+          }
+        }
+      }
+    }
+    return true;
+  }
+
+  function place(coords){
+    for (const [r,c] of coords) matrix[r][c] = 0;
+  }
+
+  const MAX_RESTARTS = 100;
+  const MAX_TRIES_PER_SHAPE = 600;
+  let restartCount = 0;
+
+  outer:
+  while (restartCount < MAX_RESTARTS) {
+    // ha újra kell próbálni, resetelődik a mátrix
+    for (let i = 0; i < 12; i++) for (let j = 0; j < 12; j++) matrix[i][j] = 1;
+
+    let okAll = true;
+
+    for (let s = 0; s < shapes.length; s++){
+      let placed = false;
+      for (let attempt = 0; attempt < MAX_TRIES_PER_SHAPE; attempt++){
+        const rot = Math.floor(Math.random()*4);
+        const shapeR = rotateShape(shapes[s], rot);
+
+        // bounding box
+        let minR = Infinity, minC = Infinity, maxR = -Infinity, maxC = -Infinity;
+        for (const [x,y] of shapeR){
+          if (x < minR) minR = x;
+          if (y < minC) minC = y;
+          if (x > maxR) maxR = x;
+          if (y > maxC) maxC = y;
+        }
+        const height = maxR - minR + 1;
+        const width  = maxC - minC + 1;
+
+        const baseR = Math.floor(Math.random() * (12 - height + 1));
+        const baseC = Math.floor(Math.random() * (12 - width + 1));
+
+        const coords = shapeR.map(([x,y]) => [ baseR + (x - minR), baseC + (y - minC) ]);
+
+        if (canPlace(coords)){
+          place(coords);
+          placed = true;
+          break;
+        }
+      }
+
+      if (!placed){
+        okAll = false;
+        restartCount++;
+        continue outer; // restart teljes elhelyezés
+      }
+    }
+
+    if (okAll) break; // siker
+  }
+
+  // ha nagyon sok restart után sem sikerült, eseti fallback: szórt pontok (ritkán lesz szükséges)
+  if (restartCount >= MAX_RESTARTS){
+    for (let i = 0; i < 12; i++) for (let j = 0; j < 12; j++) matrix[i][j] = 1;
+    let count = 0;
+    while (count < 28){
+      const x = Math.floor(Math.random()*12);
+      const y = Math.floor(Math.random()*12);
+      if (matrix[x][y] !== 0){
+        matrix[x][y] = 0;
+        count++;
+      }
+    }
+  }
+}
+
 };
 
 function szamolas() {
