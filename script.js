@@ -36,6 +36,7 @@ function generalas(){
 }
 
 function gombbetoltes(){
+    gombokDiv.innerHTML = '';
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
             const gomb = document.createElement('button');
