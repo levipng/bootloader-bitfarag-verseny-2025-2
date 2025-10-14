@@ -187,52 +187,47 @@ function szamolas() {
 }
 
 
-function gombbetoltes(){
-    gombokDiv.innerHTML = '';
+function gombbetoltes() {
+    gombokDiv.innerHTML = ''; // korábbi tartalom törlése
+
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
             const gomb = document.createElement('button');
             const contentDiv = document.createElement('div');
             contentDiv.className = 'content';
             contentDiv.innerHTML = matrix[i][j];
-            
+
             gomb.appendChild(contentDiv);
-            
-            if (matrix[i][j]==0){
-                contentDiv.innerHTML = '<img src="img/rocket.png">';
-                if(lephetoV>0 && urhajoV<28){
-                    gomb.addEventListener('click', function handler(event) {
+
+            // eseménykezelő minden gombhoz
+            gomb.addEventListener('click', function handler() {
+                if (lephetoV > 0 && urhajoV < 28) {
+                    this.disabled = true;
+
+                    if (matrix[i][j] == 0) {
+                        // űrhajó gomb
                         this.classList.add('revealed', 'raketa');
-                        this.disabled = true;
-                        --lephetoV;
-                        ++megnyomottgombokV;
-                        gombnyomas();
-                        ++urhajoV
+                        ++urhajoV;
                         urhajokiiro();
-                        plusz();
-                        ellenor();
-                    }, { once: true });
-                }
-            } else {
-                if(lephetoV>0 && urhajoV<28){
-                    gomb.addEventListener('click', function handler(event) {
+                        contentDiv.innerHTML = '<img src="img/rocket.png">';
+                    } else {
+                        // szám gomb
                         this.classList.add('revealed', 'number');
-                        this.disabled = true;
-                        if(lephetoV>0 && urhajoV<28){
-                            --lephetoV;
-                            ++megnyomottgombokV;
-                            gombnyomas();
-                            plusz();
-                            ellenor();
-                        }
-                    }, { once: true });
+                    }
+
+                    --lephetoV;
+                    ++megnyomottgombokV;
+                    gombnyomas();
+                    plusz();
+                    ellenor();
                 }
-            }
-        
+            }, { once: true });
+
             gombokDiv.appendChild(gomb);
         }
     }
-};
+}
+
 
 function ellenor(){
     if(lephetoV<1){
