@@ -23,6 +23,7 @@ function uj(){
     urhajokiiro();
     MatrixGen();
     generalas();
+    szamolas();
     gombbetoltes();
     plusz();
 };
@@ -49,6 +50,48 @@ function generalas(){
         }
     }
 };
+
+function szamolas(){
+    // Multi-source BFS (4-neighbor) to compute distance to nearest 0
+    if (!matrix || !matrix.length) return;
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+
+    // dist: -1 = unvisited
+    const dist = Array.from({ length: rows }, () => Array(cols).fill(-1));
+    const q = [];
+
+    // enqueue all zeros
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (matrix[i][j] === 0) {
+                dist[i][j] = 0;
+                q.push([i, j]);
+            }
+        }
+    }
+
+    const dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+    let head = 0;
+    while (head < q.length) {
+        const [r, c] = q[head++];
+        for (const [dr, dc] of dirs) {
+            const nr = r + dr;
+            const nc = c + dc;
+            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && dist[nr][nc] === -1) {
+                dist[nr][nc] = dist[r][c] + 1;
+                q.push([nr, nc]);
+            }
+        }
+    }
+
+    // write back distances (preserve zeros)
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (dist[i][j] >= 0) matrix[i][j] = dist[i][j];
+        }
+    }
+}
 
 function gombbetoltes(){
     gombokDiv.innerHTML = '';
