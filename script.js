@@ -91,9 +91,12 @@ function urhajokiiro(){
     meglevoV = ((urhajoV/28)*100);
     document.getElementById("meglevo").innerText = urhajoV;
     document.getElementById("meglevo").style.width = meglevoV + "%";
-    if (megnyomottgombokV%4==0){
+    if (megnyomottgombokV%4==0 || modeV==1){
         lephetoV=lephetoV+5
-        
+        document.getElementById("pluszlepesek").style.display = "flex"
+        document.getElementById("pluszlepesek").innerText = lephetoV
+    }else{
+        document.getElementById("pluszlepesek").style.display = "none"
     }
 };
 
