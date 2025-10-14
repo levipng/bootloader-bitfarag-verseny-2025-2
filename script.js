@@ -53,7 +53,6 @@ function generalas(){
 
 function szamolas(){
     // Multi-source BFS (4-neighbor) to compute distance to nearest 0
-    if (!matrix || !matrix.length) return;
     const rows = matrix.length;
     const cols = matrix[0].length;
 
