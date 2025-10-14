@@ -89,6 +89,10 @@ function gombbetoltes(){
 
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
+    if (mode==1){
+        --lephetoV
+        document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV
+    }
 };
 
 function urhajokiiro(){
@@ -111,12 +115,12 @@ function mode(){
     if (modeV==0){
         modeV=1;
         document.getElementById("jatekmode").innerText = "Normál mód"
-
+        document.getElementById("hatralevolepesek").style.display="flex"
         uj();
     }else{
         modeV=0;
         document.getElementById("jatekmode").innerText = "Time Attack mód"
-
+        document.getElementById("hatralevolepesek").style.display="none"
         uj();
     }
 };
