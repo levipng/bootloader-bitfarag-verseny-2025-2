@@ -218,7 +218,6 @@ button{
     line-height: 0;
 }
 
-/* Fixed width to match measured value from JS (557px) */
 .match-gombok-width {
     max-width: 557px;
 }
