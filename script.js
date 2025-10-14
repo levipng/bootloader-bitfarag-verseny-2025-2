@@ -188,7 +188,7 @@ function szamolas() {
 
 
 function gombbetoltes() {
-    gombokDiv.innerHTML = ''; // korábbi tartalom törlése
+    gombokDiv.innerHTML = '';
 
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
@@ -199,19 +199,16 @@ function gombbetoltes() {
 
             gomb.appendChild(contentDiv);
 
-            // eseménykezelő minden gombhoz
             gomb.addEventListener('click', function handler() {
-                if (lephetoV > 0 && urhajoV < 28) {
+                if (lephetoV > 0 && urhajoV < 28 && mode==1) {
                     this.disabled = true;
 
                     if (matrix[i][j] == 0) {
-                        // űrhajó gomb
                         this.classList.add('revealed', 'raketa');
                         ++urhajoV;
                         urhajokiiro();
                         contentDiv.innerHTML = '<img src="img/rocket.png">';
                     } else {
-                        // szám gomb
                         this.classList.add('revealed', 'number');
                     }
 
