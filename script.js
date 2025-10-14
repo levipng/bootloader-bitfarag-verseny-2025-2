@@ -2,6 +2,7 @@ const gombokDiv = document.getElementById('gombok');
 let urhajoV = 0;
 let meglevoV = 0;
 let megnyomottgombok = 0;
+let hatralevo = 0;
 let matrix;
 
 start();
@@ -16,6 +17,9 @@ function uj(){
     urhajoV = 0;
     meglevoV = 0;
     megnyomottgombok = 0;
+    hatralevo = 0;
+    gombnyomas();
+    urhajokiiro();
     generalas();
     gombbetoltes();
 }
