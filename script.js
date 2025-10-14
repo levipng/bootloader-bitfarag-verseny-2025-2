@@ -281,26 +281,4 @@ function mode(){
     }
 };
 
-(function () {
-  function applyGombokWidth() {
-    var gombok = document.getElementById('gombok');
-    if (!gombok) return;
-    var w = gombok.getBoundingClientRect().width;
-    console.log('applyGombokWidth: calculated width =', w);
-    var els = document.querySelectorAll('.match-gombok-width');
-    els.forEach(function (el) {
-      el.style.maxWidth = w + 'px';
-    });
-  }
-
-  window.addEventListener('load', applyGombokWidth);
-  window.addEventListener('resize', applyGombokWidth);
-
-  var target = document.getElementById('gombok');
-  if (target && window.MutationObserver) {
-    var mo = new MutationObserver(function () {
-      setTimeout(applyGombokWidth, 30);
-    });
-    mo.observe(target, {childList: true, subtree: true, attributes: true});
-  }
-})();
+// Note: dynamic width adjustment removed — using fixed CSS max-width instead.
