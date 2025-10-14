@@ -145,6 +145,7 @@ function urhajokiiro(){
 function plusz(){
     if (urhajoV%4==0 && urhajoV!=0 && modeV==1 && bealloV!=urhajoV){
         lephetoV=lephetoV+5
+        document.getElementById("pluszlepesek").innerText = `+5 lépés`
         document.getElementById("pluszlepesek").style.display = "flex"
         bealloV = urhajoV;
         document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
