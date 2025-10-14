@@ -94,11 +94,11 @@ function urhajokiiro(){
 };
 
 function mode(){
-    if (mode==0){
-        mode=1;
+    if (modeV==0){
+        modeV=1;
         document.getElementById("jatekmode").innerText = "Normál mód"
     }else{
-        mode=0;
+        modeV=0;
         document.getElementById("jatekmode").innerText = "Time Attack mód"
     }
 }
