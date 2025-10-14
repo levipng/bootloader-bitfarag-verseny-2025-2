@@ -7,12 +7,20 @@ let matrix;
 start();
 
 function start(){
-    initMatrix();
+    MatrixGen();
     generalas();
     gombbetoltes();
 }
 
-function initMatrix(){
+function uj(){
+    urhajoV = 0;
+    meglevoV = 0;
+    megnyomottgombok = 0;
+    generalas();
+    gombbetoltes();
+}
+
+function MatrixGen(){
     matrix = Array(12);
     for (let i = 0; i < 12; i++) {
         matrix[i] = Array(12);
