@@ -189,6 +189,12 @@ button{
     flex-wrap: wrap;
 }
 
+#plusszlepesek {
+    display: none;
+    color: #dee7f0;
+    font-weight: bold;
+    text-shadow: 0 0 5px #0afc8b;
+}
 
 .progress-bar {
     background: linear-gradient(90deg, #71c1fe, #1887f6);
