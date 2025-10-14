@@ -7,7 +7,7 @@ let meglevoV = 0;
 let megnyomottgombokV = 0;
 let hatralevoV = 0;
 let lephetoV = 20;
-let bealloV = 1;
+let bealloV = 0;
 
 uj();
 
@@ -17,7 +17,7 @@ function uj(){
     megnyomottgombokV = 0;
     hatralevoV = 0;
     lephetoV = 20;
-    bealloV = 1;
+    bealloV = 0;
 
     gombnyomas();
     urhajokiiro();
