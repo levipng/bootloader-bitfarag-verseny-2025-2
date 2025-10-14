@@ -105,6 +105,7 @@ function plusz(){
         lephetoV=lephetoV+5
         document.getElementById("pluszlepesek").style.display = "flex"
         bealloV = urhajoV;
+        document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
     }else{
         document.getElementById("pluszlepesek").style.display = "none"
     }
