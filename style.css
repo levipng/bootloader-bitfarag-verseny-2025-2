@@ -179,6 +179,13 @@ button{
     border-radius: 15px;
 }
 
+/* Ensure inside the inline-block wrapper the children fill the wrapper's pixel width */
+#gombos-wrapper .game-info,
+#gombos-wrapper .progress {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 
 :root {
     --gomb-width-percent: 40%;
