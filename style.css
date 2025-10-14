@@ -80,7 +80,7 @@ button.revealed.number .content:not(:has(img)) {
 
 
 button.revealed.raketa {
-    background-color: orangered;
+    background-color: rgb(88, 11, 11);
     border-color: #b03a2e;
     box-shadow: 0 0 12px rgba(255, 80, 40, 0.5);
     
