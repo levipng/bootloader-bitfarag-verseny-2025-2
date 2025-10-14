@@ -71,9 +71,9 @@ button.revealed.number {
     font-weight: bold;
     font-size: 13px;
 }
-/*???*/
+
 button.revealed.number .content:not(:has(img)) {
-    color: #7b3f00;
+    color: #f9f9f9;
     font-weight: 700;
     font-size: 12px;
 }
@@ -101,9 +101,9 @@ button.revealed .content {
     
 }
 
-/*???*/
+
 button.revealed .content:not(:has(img)) {
-    color: #2c3e50;
+    color: linear-gradient(90deg, #71c1fe, #1887f6);;
     font-weight: bold;
 }
 
@@ -129,7 +129,6 @@ body {
     
 }
 
-/* Levi ++-- */
 
 button{
     width: auto;
