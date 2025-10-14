@@ -23,6 +23,7 @@ button {
     justify-content: center;
     border-radius: 5px;
     transition: all 0.3s ease;
+    
 
 }
 
@@ -34,12 +35,17 @@ button:hover {
 }
 
 
+button:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+
 button .content {
     display: none;
     font-size: 12px;
     text-align: center;
     word-break: break-all;
-    overflow: hidden;
     width: 100%;
     height: 100%;
 }
@@ -65,17 +71,19 @@ button.revealed.number {
     font-weight: bold;
     font-size: 13px;
 }
-
+/*???*/
 button.revealed.number .content:not(:has(img)) {
     color: #7b3f00;
     font-weight: 700;
     font-size: 12px;
 }
 
-/* Rocket revealed: strong colored button and center the image */
+
 button.revealed.raketa {
     background-color: orangered;
     border-color: #b03a2e;
+    box-shadow: 0 0 12px rgba(255, 80, 40, 0.5);
+    
 }
 
 button.revealed.raketa .content img {
@@ -85,7 +93,7 @@ button.revealed.raketa .content img {
 }
 
 
-/* REVEALED állapotban megjelenítjük a tartalmat */
+
 button.revealed .content {
     display: flex;
     align-items: center;
@@ -93,7 +101,7 @@ button.revealed .content {
     
 }
 
-/* Opcionális: Szöveges tartalom stílusa, ha nem kép */
+/*???*/
 button.revealed .content:not(:has(img)) {
     color: #2c3e50;
     font-weight: bold;
@@ -122,53 +130,24 @@ body {
 }
 
 
-
-/* Levi ++-- */
-
-button{
-    width: auto;
-    
-}
-
-.neu-button {
-    background-color: #4480e0;
-    border-radius: 50px;
-    box-shadow: inset 4px 4px 10px #091239, inset -4px -4px 10px #142b4b;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 15px 40px;
-    transition: all 0.2s ease-in-out;
-    border: 2px solid rgb(206, 206, 206);
-}
-
-.neu-button:hover {
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
-}
-
-.neu-button:focus {
-    outline: none;
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
-}
-
-.raketa{
-    background-color: orangered;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .game-info {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 15px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12);
+    padding: 15px 25px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    font-size: 1rem;
 
 }
+
 
 .game-controls {
     display: flex;
