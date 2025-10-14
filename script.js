@@ -7,7 +7,7 @@ let meglevoV = 0;
 let megnyomottgombokV = 0;
 let hatralevoV = 0;
 let lephetoV = 20;
-let bealloV = 0;
+let bealloV = 1;
 
 uj();
 
@@ -17,13 +17,14 @@ function uj(){
     megnyomottgombokV = 0;
     hatralevoV = 0;
     lephetoV = 20;
-    bealloV = 0;
+    bealloV = 1;
 
     gombnyomas();
     urhajokiiro();
     MatrixGen();
     generalas();
     gombbetoltes();
+    plusz();
 };
 
 function MatrixGen(){
@@ -97,14 +98,12 @@ function urhajokiiro(){
 };
 
 function plusz(){
-    if (urhajoV%4==0 && urhajoV!=0 && modeV==1 && bealloV==0){
+    if (urhajoV%4==0 && urhajoV!=0 && modeV==1 && bealloV!=urhajoV){
         lephetoV=lephetoV+5
         document.getElementById("pluszlepesek").style.display = "flex"
-        document.getElementById("pluszlepesek").innerText = "+5 lépés"
-        bealloV = 1;
+        bealloV = urhajoV;
     }else{
         document.getElementById("pluszlepesek").style.display = "none"
-        bealloV = 0;
     }
 }
 
