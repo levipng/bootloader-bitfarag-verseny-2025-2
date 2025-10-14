@@ -91,7 +91,7 @@ function gombbetoltes(){
 
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
-    document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
+    if(modeV==1){document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;}
 };
 
 function urhajokiiro(){
