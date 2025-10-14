@@ -67,10 +67,10 @@ function gombbetoltes(){
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
-                    ++urhajoV
-                    urhajokiiro();
                     ++megnyomottgombokV;
                     gombnyomas();
+                    ++urhajoV
+                    urhajokiiro();
                 }, { once: true });
             } else {
                 gomb.addEventListener('click', function handler(event) {
