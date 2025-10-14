@@ -13,6 +13,7 @@
     border-radius: 20px;
 }
 
+
 button {
     background:rgba(9, 39, 80, 0.8);
     border: 1px solid rgb(255, 255, 255, 0.2);
@@ -26,22 +27,16 @@ button {
 }
 
 
-
-/* Gomb hover effekt - NEM látszik a tartalom */
 button:hover {
-    background-color: #6a8cc7;
-    /* Világosabb kék hover-re */
+    background: rgba(120, 180, 255, 0.2);
     transform: scale(1.05);
-    /* Enyhén megnöveljük */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    /* Árnyék hozzáadása */
+    box-shadow: 0 0 8px rgba(120, 180, 255, 0.5);
 }
 
-/* Tartalom alapból rejtve */
+
 button .content {
     display: none;
-    font-size: 10px;
-    line-height: 1;
+    font-size: 12px;
     text-align: center;
     word-break: break-all;
     overflow: hidden;
@@ -49,24 +44,26 @@ button .content {
     height: 100%;
 }
 
-/* Képek méretezése */
+
 button .content img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
 
-/* REVEALED állapot - látszik a tartalom */
-/* Base revealed style (defaults for any revealed button) */
+
 button.revealed {
-    background-color: #e8f4f8;
-    border-color: #3498db;
+    background:rgb(255, 255, 255, 0.2);
+    border-color: #6fb5f7;
 }
 
-/* Numbered revealed: show number with clear background and bold text */
+
 button.revealed.number {
-    background-color: #fff7e6; /* light warm background */
-    border-color: #f1c40f; /* yellow border */
+    background:rgb(255, 255, 255, 0.3);
+    border-color: #dbe7ea; 
+    color: #061147;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 button.revealed.number .content:not(:has(img)) {
@@ -102,12 +99,26 @@ button.revealed .content:not(:has(img)) {
     font-weight: bold;
 }
 
-/* Fejléc stílus */
+
 h1 {
     text-align: center;
-    color: #2c3e50;
-    font-family: Arial, sans-serif;
-    margin-bottom: 20px;
+    color: #dee7f0;
+    text-shadow: 0 0 10px rgba(120, 180, 255, 0.6);
+    margin: 30px 0 10px 0;
+}
+
+
+body {
+    background: linear-gradient(130deg, #061147, #1b4b80);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
 }
 
 
