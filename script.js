@@ -4,7 +4,6 @@ let meglevoV = 0;
 let megnyomottgombokV = 0;
 let hatralevoV = 0;
 let modeV = 0;
-let lepheto = 20;
 let matrix;
 
 start();
@@ -54,13 +53,16 @@ function gombbetoltes(){
     gombokDiv.innerHTML = '';
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
-            document.createElement('div').className = 'content';
-            document.createElement('div').innerHTML = matrix[i][j];
-            document.createElement('button').appendChild(document.createElement('div'));
+            const gomb = document.createElement('button');
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'content';
+            contentDiv.innerHTML = matrix[i][j];
+            
+            gomb.appendChild(contentDiv);
             
             if (matrix[i][j]==0){
-                document.createElement('div').innerHTML = '<img src="img/rocket.png">';
-                document.createElement('button').addEventListener('click', function handler(event) {
+                contentDiv.innerHTML = '<img src="img/rocket.png">';
+                gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
                     ++urhajoV
@@ -69,7 +71,7 @@ function gombbetoltes(){
                     gombnyomas();
                 }, { once: true });
             } else {
-                document.createElement('button').addEventListener('click', function handler(event) {
+                gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
                     ++megnyomottgombokV;
@@ -77,14 +79,13 @@ function gombbetoltes(){
                 }, { once: true });
             }
         
-            gombokDiv.appendChild(document.createElement('button'));
+            gombokDiv.appendChild(gomb);
         }
     }
 };
 
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
-    20-megnyomottgombokV
 };
 
 function urhajokiiro(){
@@ -97,11 +98,8 @@ function mode(){
     if (modeV==0){
         modeV=1;
         document.getElementById("jatekmode").innerText = "Normál mód"
-        uj();
     }else{
         modeV=0;
         document.getElementById("jatekmode").innerText = "Time Attack mód"
-        
-        uj();
     }
 }
