@@ -37,12 +37,17 @@ function MatrixGen(){
 }
 
 function generalas(){
+    let i = 0;
     for(let a = 0;a<27;++a){
         while(1){
             let b = Math.floor(Math.random() * 12)
             let c = Math.floor(Math.random() * 12)
             if (matrix[b][c]!=0){
                 matrix[b][c] = 0;
+                break;
+            }
+            ++i
+            if (i>1000){
                 break;
             }
         }
