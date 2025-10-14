@@ -90,7 +90,7 @@ function szamolas(){
             if (dist[i][j] >= 0) matrix[i][j] = dist[i][j];
         }
     }
-}
+};
 
 function gombbetoltes(){
     gombokDiv.innerHTML = '';
