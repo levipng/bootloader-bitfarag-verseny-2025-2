@@ -64,13 +64,16 @@ function gombbetoltes(){
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
+                    ++urhajoV
                     urhajokiiro();
+                    ++megnyomottgombok;
                     gombnyomas();
                 }, { once: true });
             } else {
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
+                    ++megnyomottgombok;
                     gombnyomas();
                 }, { once: true });
             }
@@ -81,12 +84,10 @@ function gombbetoltes(){
 };
 
 function gombnyomas(){
-    ++megnyomottgombok;
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombok;
 };
 
 function urhajokiiro(){
-    ++urhajoV
     meglevoV = ((urhajoV/28)*100);
     document.getElementById("meglevo").innerText = urhajoV;
     document.getElementById("meglevo").style.width = meglevoV + "%";
