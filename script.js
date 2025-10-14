@@ -1,8 +1,9 @@
 const gombokDiv = document.getElementById('gombok');
 let urhajoV = 0;
 let meglevoV = 0;
-let megnyomottgombok = 0;
-let hatralevo = 0;
+let megnyomottgombokV = 0;
+let hatralevoV = 0;
+let modeV = 0;
 let matrix;
 
 start();
@@ -16,8 +17,8 @@ function start(){
 function uj(){
     urhajoV = 0;
     meglevoV = 0;
-    megnyomottgombok = 0;
-    hatralevo = 0;
+    megnyomottgombokV = 0;
+    hatralevoV = 0;
     gombnyomas();
     urhajokiiro();
     generalas();
@@ -52,7 +53,6 @@ function gombbetoltes(){
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
             const gomb = document.createElement('button');
-            
             const contentDiv = document.createElement('div');
             contentDiv.className = 'content';
             contentDiv.innerHTML = matrix[i][j];
@@ -73,7 +73,7 @@ function gombbetoltes(){
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
-                    ++megnyomottgombok;
+                    ++megnyomottgombokV;
                     gombnyomas();
                 }, { once: true });
             }
@@ -84,7 +84,7 @@ function gombbetoltes(){
 };
 
 function gombnyomas(){
-    document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombok;
+    document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
 };
 
 function urhajokiiro(){
@@ -92,3 +92,13 @@ function urhajokiiro(){
     document.getElementById("meglevo").innerText = urhajoV;
     document.getElementById("meglevo").style.width = meglevoV + "%";
 };
+
+function mode(){
+    if (mode==0){
+        mode=1;
+        document.getElementById("jatekmode").innerText = "Normál mód"
+    }else{
+        mode=0;
+        document.getElementById("jatekmode").innerText = "Time Attack mód"
+    }
+}
