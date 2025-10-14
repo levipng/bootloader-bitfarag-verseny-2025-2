@@ -136,32 +136,29 @@ button{
     
 }
 
+
 .neu-button {
-    background-color: #4480e0;
-    border-radius: 50px;
-    box-shadow: inset 4px 4px 10px #091239, inset -4px -4px 10px #142b4b;
-    color: #ffffff;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e3f2ff;
     font-size: 18px;
-    padding: 15px 40px;
-    transition: all 0.2s ease-in-out;
-    border: 2px solid rgb(206, 206, 206);
+    padding: 14px 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .neu-button:hover {
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+    background: rgba(120, 180, 255, 0.25);
+    box-shadow: 0 0 15px rgba(120, 180, 255, 0.6);
+    transform: translateY(-2px);
 }
 
-.neu-button:focus {
-    outline: none;
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
-}
-
-.raketa{
-    background-color: orangered;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.neu-button:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 0 6px rgba(120, 180, 255, 0.4);
 }
 
 
