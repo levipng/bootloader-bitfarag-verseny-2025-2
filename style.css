@@ -179,26 +179,15 @@ button{
     border-radius: 15px;
 }
 
-/* Make elements match a percentage width (of their container) without JS.
-   Set --gomb-width-percent to the desired percentage.
-   Example: --gomb-width-percent: 60%;
-*/
+
 :root {
-    --gomb-width-percent: 60%;
+    --gomb-width-percent: 40%;
 }
 
 .match-gombok-width {
-    /* width relative to the parent container (the bootstrap column).
-       This will appear centered when used with mx-auto on a column. */
     width: var(--gomb-width-percent);
     max-width: 100%;
 }
-
-/* On very small screens, make it full width for readability */
-@media (max-width: 576px) {
-    :root { --gomb-width-percent: 100%; }
-}
-
 
 .game-controls {
     display: flex;
