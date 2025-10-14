@@ -18,22 +18,19 @@
             </div>
         </div>
         
-        <div class="row mt-4 mb-4">
-            <div class="col-6 d-flex justify-content-center">
-                <button id="ujgame" onclick="uj();" class="neu-button" id="uj">Új játék</button>
-            </div>
-            <div class="col-6 d-flex justify-content-center">
-                <button id="jatekmode" onclick="mode();" class="neu-button" id="mod">Time Attack mód</button>
+        <div class="row mt-4 mb-4 align-items-center">
+            <div class="col-12 d-flex justify-content-center gap-3 flex-wrap">
+                <button id="ujgame" onclick="uj();" class="neu-button">Új játék</button>
+                <button id="jatekmode" onclick="mode();" class="neu-button">Time Attack mód</button>
             </div>
         </div>
+
         <div class="row">
             <div class="col-12">
-                <div class="game-info">
-                    <div class="row mt-4 mb-4">
-                        <div class="col-4 d-flex justify-content-center"><p id="lepesek">Megtett lépések: 0</p></div>
-                        <div class="col-4 d-flex justify-content-center"><p id="pluszlepesek"></p></div>
-                        <div class="col-4 d-flex justify-content-center"><p id="hatralevolepesek"></p></div>
-                    </div>
+                <div class="game-info text-center mt-3 mb-3 d-flex justify-content-center">
+                    <p id="lepesek" class="mx-3">Megtett lépések: 0</p>
+                    <p id="pluszlepesek" class="mx-3"></p>
+                    <p id="hatralevolepesek" class="mx-3"></p>
                 </div>
             </div>
         </div>
