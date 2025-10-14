@@ -4,27 +4,29 @@ let meglevoV = 0;
 let megnyomottgombokV = 0;
 let hatralevoV = 0;
 let modeV = 0;
+let lephetoV = 20;
 let matrix;
 
-start();
+uj();
 
 function start(){
     MatrixGen();
     generalas();
     gombbetoltes();
-}
+};
 
 function uj(){
     urhajoV = 0;
     meglevoV = 0;
     megnyomottgombokV = 0;
     hatralevoV = 0;
+    lephetoV = 20;
     gombnyomas();
     urhajokiiro();
     MatrixGen();
     generalas();
     gombbetoltes();
-}
+};
 
 function MatrixGen(){
     matrix = Array(12);
@@ -34,7 +36,7 @@ function MatrixGen(){
             matrix[i][j] = i * 12 + j;
         }
     }
-}
+};
 
 function generalas(){
     for(let a = 0;a<27;++a){
@@ -47,7 +49,7 @@ function generalas(){
             }
         }
     }
-}
+};
 
 function gombbetoltes(){
     gombokDiv.innerHTML = '';
@@ -89,14 +91,22 @@ function urhajokiiro(){
     meglevoV = ((urhajoV/28)*100);
     document.getElementById("meglevo").innerText = urhajoV;
     document.getElementById("meglevo").style.width = meglevoV + "%";
+    if (megnyomottgombokV%4==0){
+        lephetoV=lephetoV+5
+        
+    }
 };
 
 function mode(){
     if (modeV==0){
         modeV=1;
         document.getElementById("jatekmode").innerText = "Normál mód"
+
+        uj();
     }else{
         modeV=0;
         document.getElementById("jatekmode").innerText = "Time Attack mód"
+
+        uj();
     }
-}
+};
