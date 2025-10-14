@@ -21,6 +21,7 @@ function uj(){
     hatralevoV = 0;
     gombnyomas();
     urhajokiiro();
+    MatrixGen();
     generalas();
     gombbetoltes();
 }
