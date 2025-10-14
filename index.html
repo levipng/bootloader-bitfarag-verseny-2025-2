@@ -49,36 +49,4 @@
 <script src="./bootstrap/js/jquery-3.7.1.js"></script>
 <script src="./bootstrap/js/bootstrap.js"></script>
 <script src="script.js"></script>
-
-<script>
-    // Match the width of elements with .match-gombok-width to the #gombok element.
-    (function () {
-        function applyGombokWidth() {
-            var gombok = document.getElementById('gombok');
-            if (!gombok) return;
-            // getBoundingClientRect gives subpixel values; use that
-            var w = gombok.getBoundingClientRect().width;
-            var els = document.querySelectorAll('.match-gombok-width');
-            els.forEach(function (el) {
-                // set max-width so it remains responsive inside container
-                el.style.maxWidth = w + 'px';
-            });
-        }
-
-        // Apply on load and resize
-        window.addEventListener('load', applyGombokWidth);
-        window.addEventListener('resize', applyGombokWidth);
-
-        // Watch for changes to #gombok content (e.g., when the grid is rendered)
-        var target = document.getElementById('gombok');
-        if (target && window.MutationObserver) {
-            var mo = new MutationObserver(function () {
-                // small timeout to allow layout to settle
-                setTimeout(applyGombokWidth, 30);
-            });
-            mo.observe(target, {childList: true, subtree: true, attributes: true});
-        }
-    })();
-</script>
-
 </html>
