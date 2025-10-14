@@ -39,7 +39,6 @@ function MatrixGen(){
 };
 
 function generalas(){
-function generalas(){
   // biztos alapállapot
   for (let i = 0; i < 12; i++) {
     for (let j = 0; j < 12; j++) {
@@ -161,7 +160,6 @@ function generalas(){
   }
 }
 
-};
 
 function szamolas() {
   const sor = matrix.length;
