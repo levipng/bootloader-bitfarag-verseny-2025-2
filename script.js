@@ -51,46 +51,50 @@ function generalas(){
     }
 };
 
-function szamolas(){
-    // Multi-source BFS (4-neighbor) to compute distance to nearest 0
-    const rows = matrix.length;
-    const cols = matrix[0].length;
+function szamolas() {
+  const sor = matrix.length;
+  const oszlop = matrix[0].length;
 
-    // dist: -1 = unvisited
-    const dist = Array.from({ length: rows }, () => Array(cols).fill(-1));
-    const q = [];
-
-    // enqueue all zeros
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            if (matrix[i][j] === 0) {
-                dist[i][j] = 0;
-                q.push([i, j]);
-            }
-        }
+  // dist mátrix létrehozása
+  const dist = [];
+  for (let i = 0; i < sor; i++) {
+    dist[i] = [];
+    for (let j = 0; j < oszlop; j++) {
+      if (matrix[i][j] === 0) dist[i][j] = 0;
+      else dist[i][j] = Infinity;
     }
+  }
 
-    const dirs = [[1,0],[-1,0],[0,1],[0,-1]];
-    let head = 0;
-    while (head < q.length) {
-        const [r, c] = q[head++];
-        for (const [dr, dc] of dirs) {
-            const nr = r + dr;
-            const nc = c + dc;
-            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && dist[nr][nc] === -1) {
-                dist[nr][nc] = dist[r][c] + 1;
-                q.push([nr, nc]);
-            }
-        }
-    }
+  // Ismételjük, amíg nem változik semmi
+  let valtozott = true;
+  while (valtozott) {
+    valtozott = false;
+    for (let i = 0; i < sor; i++) {
+      for (let j = 0; j < oszlop; j++) {
+        if (dist[i][j] === 0) continue;
 
-    // write back distances (preserve zeros)
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            if (dist[i][j] >= 0) matrix[i][j] = dist[i][j];
+        let min = dist[i][j];
+        if (i > 0) min = Math.min(min, dist[i - 1][j] + 1);
+        if (i < sor - 1) min = Math.min(min, dist[i + 1][j] + 1);
+        if (j > 0) min = Math.min(min, dist[i][j - 1] + 1);
+        if (j < oszlop - 1) min = Math.min(min, dist[i][j + 1] + 1);
+
+        if (min < dist[i][j]) {
+          dist[i][j] = min;
+          valtozott = true;
         }
+      }
     }
-};
+  }
+
+  // visszaírás az eredeti mátrixba
+  for (let i = 0; i < sor; i++) {
+    for (let j = 0; j < oszlop; j++) {
+      matrix[i][j] = dist[i][j];
+    }
+  }
+}
+
 
 function gombbetoltes(){
     gombokDiv.innerHTML = '';
