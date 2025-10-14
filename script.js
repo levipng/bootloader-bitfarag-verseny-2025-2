@@ -200,30 +200,33 @@ function gombbetoltes() {
             gomb.appendChild(contentDiv);
 
             gomb.addEventListener('click', function handler() {
-                if (lephetoV > 0 && urhajoV < 28 && mode==1) {
-                    this.disabled = true;
+                const lehet = (modeV == 1) ? (lephetoV > 0 && urhajoV < 28) : (urhajoV < 28);
+                if (!lehet) return;
 
-                    if (matrix[i][j] == 0) {
-                        this.classList.add('revealed', 'raketa');
-                        ++urhajoV;
-                        urhajokiiro();
-                        contentDiv.innerHTML = '<img src="img/rocket.png">';
-                    } else {
-                        this.classList.add('revealed', 'number');
-                    }
+                this.disabled = true;
 
-                    --lephetoV;
-                    ++megnyomottgombokV;
-                    gombnyomas();
-                    plusz();
-                    ellenor();
+                if (matrix[i][j] == 0) {
+                    this.classList.add('revealed', 'raketa');
+                    ++urhajoV;
+                    urhajokiiro();
+                    contentDiv.innerHTML = '<img src="img/rocket.png">';
+                } else {
+                    this.classList.add('revealed', 'number');
                 }
+
+                if (modeV == 1) --lephetoV;
+                ++megnyomottgombokV;
+
+                gombnyomas();
+                plusz();
+                ellenor();
             }, { once: true });
 
             gombokDiv.appendChild(gomb);
         }
     }
 }
+
 
 
 function ellenor(){
