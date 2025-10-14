@@ -166,12 +166,12 @@ button{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    box-sizing: border-box; /* include padding/border in width */
-    width: 100%; /* match the parent column's width */
-    margin: 0 0 20px 0; /* align with other rows */
+    box-sizing: border-box; 
+    width: 100%; 
+    margin: 0 0 20px 0; 
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
-    padding: 15px 25px;
+    padding: 6px 15px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-weight: 500;
