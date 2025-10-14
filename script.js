@@ -90,8 +90,8 @@ function gombbetoltes(){
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
     if (modeV==1){
-        --lephetoV
-        document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV
+        --lephetoV;
+        document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
     }
 };
 
@@ -116,7 +116,7 @@ function mode(){
         modeV=1;
         document.getElementById("jatekmode").innerText = "Normál mód"
         document.getElementById("hatralevolepesek").style.display="flex"
-
+        document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
         uj();
     }else{
         modeV=0;
