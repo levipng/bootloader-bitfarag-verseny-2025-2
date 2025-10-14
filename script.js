@@ -37,17 +37,12 @@ function MatrixGen(){
 }
 
 function generalas(){
-    let i = 0;
     for(let a = 0;a<27;++a){
         while(1){
             let b = Math.floor(Math.random() * 12)
             let c = Math.floor(Math.random() * 12)
             if (matrix[b][c]!=0){
                 matrix[b][c] = 0;
-                break;
-            }
-            ++i
-            if (i>1000){
                 break;
             }
         }
@@ -58,16 +53,13 @@ function gombbetoltes(){
     gombokDiv.innerHTML = '';
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
-            const gomb = document.createElement('button');
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'content';
-            contentDiv.innerHTML = matrix[i][j];
-            
-            gomb.appendChild(contentDiv);
+            document.createElement('div').className = 'content';
+            document.createElement('div').innerHTML = matrix[i][j];
+            document.createElement('button').appendChild(document.createElement('div'));
             
             if (matrix[i][j]==0){
-                contentDiv.innerHTML = '<img src="img/rocket.png">';
-                gomb.addEventListener('click', function handler(event) {
+                document.createElement('div').innerHTML = '<img src="img/rocket.png">';
+                document.createElement('button').addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
                     ++urhajoV
@@ -76,7 +68,7 @@ function gombbetoltes(){
                     gombnyomas();
                 }, { once: true });
             } else {
-                gomb.addEventListener('click', function handler(event) {
+                document.createElement('button').addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
                     ++megnyomottgombokV;
@@ -84,7 +76,7 @@ function gombbetoltes(){
                 }, { once: true });
             }
         
-            gombokDiv.appendChild(gomb);
+            gombokDiv.appendChild(document.createElement('button'));
         }
     }
 };
