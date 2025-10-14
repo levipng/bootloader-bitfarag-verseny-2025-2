@@ -71,6 +71,7 @@ function gombbetoltes(){
                     gombnyomas();
                     ++urhajoV
                     urhajokiiro();
+                    plusz();
                 }, { once: true });
             } else {
                 gomb.addEventListener('click', function handler(event) {
@@ -78,6 +79,7 @@ function gombbetoltes(){
                     this.disabled = true;
                     ++megnyomottgombokV;
                     gombnyomas();
+                    plusz();
                 }, { once: true });
             }
         
@@ -88,13 +90,6 @@ function gombbetoltes(){
 
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
-    if (urhajoV%4==0 && urhajoV!=0 && modeV==1){
-        lephetoV=lephetoV+5
-        document.getElementById("pluszlepesek").style.display = "flex"
-        document.getElementById("pluszlepesek").innerText = "+5 lépés"
-    }else{
-        document.getElementById("pluszlepesek").style.display = "none"
-    }
 };
 
 function urhajokiiro(){
@@ -102,6 +97,16 @@ function urhajokiiro(){
     document.getElementById("meglevo").innerText = urhajoV;
     document.getElementById("meglevo").style.width = meglevoV + "%";
 };
+
+function plusz(){
+    if (urhajoV%4==0 && urhajoV!=0 && modeV==1){
+        lephetoV=lephetoV+5
+        document.getElementById("pluszlepesek").style.display = "flex"
+        document.getElementById("pluszlepesek").innerText = "+5 lépés"
+    }else{
+        document.getElementById("pluszlepesek").style.display = "none"
+    }
+}
 
 function mode(){
     if (modeV==0){
