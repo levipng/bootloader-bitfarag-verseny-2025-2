@@ -97,7 +97,7 @@ function urhajokiiro(){
     if (megnyomottgombokV%4==0 && megnyomottgombokV!=0 && modeV==1){
         lephetoV=lephetoV+5
         document.getElementById("pluszlepesek").style.display = "flex"
-        document.getElementById("pluszlepesek").innerText = lephetoV
+        document.getElementById("pluszlepesek").innerText = "+5 lépés"
     }else{
         document.getElementById("pluszlepesek").style.display = "none"
     }
