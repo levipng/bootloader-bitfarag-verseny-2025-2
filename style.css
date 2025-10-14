@@ -163,6 +163,7 @@ button{
 
 
 .game-info {
+    justify-content: center;
     gap: 20px;
     width: 80%;
     max-width: 800px;
