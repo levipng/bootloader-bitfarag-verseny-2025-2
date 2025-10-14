@@ -200,11 +200,10 @@ function gombbetoltes(){
             
             if (matrix[i][j]==0){
                 contentDiv.innerHTML = '<img src="img/rocket.png">';
-                gomb.addEventListener('click', function handler(event) {
-                    this.classList.add('revealed', 'raketa');
-                    this.disabled = true;
-
-                    if(lephetoV>0 && urhajoV<28){
+                if(lephetoV>0 && urhajoV<28){
+                    gomb.addEventListener('click', function handler(event) {
+                        this.classList.add('revealed', 'raketa');
+                        this.disabled = true;
                         --lephetoV;
                         ++megnyomottgombokV;
                         gombnyomas();
@@ -212,20 +211,22 @@ function gombbetoltes(){
                         urhajokiiro();
                         plusz();
                         ellenor();
-                    }
-                }, { once: true });
+                    }, { once: true });
+                }
             } else {
-                gomb.addEventListener('click', function handler(event) {
-                    this.classList.add('revealed', 'number');
-                    this.disabled = true;
-                    if(lephetoV>0 && urhajoV<28){
-                        --lephetoV;
-                        ++megnyomottgombokV;
-                        gombnyomas();
-                        plusz();
-                        ellenor();
-                    }
-                }, { once: true });
+                if(lephetoV>0 && urhajoV<28){
+                    gomb.addEventListener('click', function handler(event) {
+                        this.classList.add('revealed', 'number');
+                        this.disabled = true;
+                        if(lephetoV>0 && urhajoV<28){
+                            --lephetoV;
+                            ++megnyomottgombokV;
+                            gombnyomas();
+                            plusz();
+                            ellenor();
+                        }
+                    }, { once: true });
+                }
             }
         
             gombokDiv.appendChild(gomb);
