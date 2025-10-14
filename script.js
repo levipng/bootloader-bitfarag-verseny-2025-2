@@ -69,7 +69,7 @@ function gombbetoltes(){
                     this.disabled = true;
                     ++urhajoV
                     urhajokiiro();
-                    ++megnyomottgombok;
+                    ++megnyomottgombokV;
                     gombnyomas();
                 }, { once: true });
             } else {
