@@ -66,6 +66,7 @@ function gombbetoltes(){
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'raketa');
                     this.disabled = true;
+                    --lephetoV;
                     ++megnyomottgombokV;
                     gombnyomas();
                     ++urhajoV
@@ -76,6 +77,7 @@ function gombbetoltes(){
                 gomb.addEventListener('click', function handler(event) {
                     this.classList.add('revealed', 'number');
                     this.disabled = true;
+                    --lephetoV;
                     ++megnyomottgombokV;
                     gombnyomas();
                     plusz();
@@ -89,10 +91,7 @@ function gombbetoltes(){
 
 function gombnyomas(){
     document.getElementById("lepesek").innerText = "Megtett lépések: " + megnyomottgombokV;
-    if (modeV==1){
-        --lephetoV;
-        document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
-    }
+    document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
 };
 
 function urhajokiiro(){
