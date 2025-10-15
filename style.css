@@ -1,7 +1,7 @@
 #gombok {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, auto);
+    grid-auto-rows: minmax(0, 1fr);
     gap: 3px;
     width: max-content;
     margin: 20px auto 50px auto;
