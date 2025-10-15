@@ -17,7 +17,7 @@
                 <h1>Tetrominó Torpedó</h1>
             </div>
         </div>
-        
+
         <div class="row mt-4 mb-4 align-items-center">
             <div class="col-12 d-flex justify-content-center gap-3 flex-wrap">
                 <button id="ujgame" onclick="uj();" class="neu-button">Új játék</button>
@@ -34,19 +34,25 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-12 mb-4 match-gombok-width mx-auto">
-                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
                     <div id="meglevo" class="progress-bar" style="width: 0%">0</div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="gombok"></div>
+            </div>
+        </div>
     </div>
-    <div id="gombok"></div>
 </body>
 
 <script src="./bootstrap/js/jquery-3.7.1.js"></script>
 <script src="./bootstrap/js/bootstrap.js"></script>
 <script src="script.js"></script>
+
 </html>
