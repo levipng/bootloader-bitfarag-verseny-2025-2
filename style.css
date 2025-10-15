@@ -1,12 +1,12 @@
 #gombok {
     display: grid;
-    grid-template-columns: repeat(12,100%);
-    grid-template-rows: repeat(12, 100%);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, auto);
     gap: 3px;
     width: max-content;
     margin: 20px auto 50px auto;
     padding: 20px;
-    background:rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.09);
     backdrop-filter: blur(12px);
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
@@ -15,7 +15,7 @@
 
 
 button {
-    background:rgba(9, 39, 80, 0.8);
+    background: rgba(9, 39, 80, 0.8);
     border: 1px solid rgb(255, 255, 255, 0.2);
     cursor: pointer;
     display: flex;
@@ -23,7 +23,7 @@ button {
     justify-content: center;
     border-radius: 5px;
     transition: all 0.3s ease;
-    
+
 
 }
 
@@ -59,14 +59,14 @@ button .content img {
 
 
 button.revealed {
-    background:rgb(255, 255, 255, 0.2);
+    background: rgb(255, 255, 255, 0.2);
     border-color: #6fb5f7;
 }
 
 
 button.revealed.number {
-    background:rgb(255, 255, 255, 0.3);
-    border-color: #dbe7ea; 
+    background: rgb(255, 255, 255, 0.3);
+    border-color: #dbe7ea;
     color: #061147;
     font-weight: bold;
     font-size: 13px;
@@ -83,7 +83,7 @@ button.revealed.raketa {
     background-color: rgb(88, 11, 11);
     border-color: #b03a2e;
     box-shadow: 0 0 12px rgba(255, 80, 40, 0.5);
-    
+
 }
 
 button.revealed.raketa .content img {
@@ -98,12 +98,13 @@ button.revealed .content {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 
 button.revealed .content:not(:has(img)) {
-    color: linear-gradient(90deg, #71c1fe, #1887f6);;
+    color: linear-gradient(90deg, #71c1fe, #1887f6);
+    ;
     font-weight: bold;
 }
 
@@ -126,13 +127,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    
+
 }
 
 
-button{
+button {
     width: auto;
-    
+
 }
 
 
@@ -165,9 +166,9 @@ button{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    box-sizing: border-box; 
-    width: 100%; 
-    margin: 0 0 20px 0; 
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 20px 0;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
     padding: 2px 10px;
@@ -211,7 +212,7 @@ button{
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     overflow: hidden;
-    backdrop-filter:blur(10px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0;
     margin: 0;
@@ -221,4 +222,3 @@ button{
 .match-gombok-width {
     max-width: 557px;
 }
-
