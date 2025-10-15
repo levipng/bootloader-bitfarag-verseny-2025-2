@@ -272,7 +272,7 @@ function mode(){
         uj();
     }else{
         modeV=0;
-        document.getElementById("jatekmode").innerText = "Time Attack mód"
+        document.getElementById("jatekmode").innerText = "Lépéskorlát mód"
         document.getElementById("hatralevolepesek").style.display="none"
         uj();
     }
