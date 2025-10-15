@@ -26,12 +26,13 @@ button {
     justify-content: center;
     border-radius: 5px;
     transition: all 0.3s ease;
-    /* Make each button square and allow it to scale with the grid */
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
 }
 
+/* Only make buttons inside the game grid square and responsive */
+#gombok button {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
 
 button:hover {
     background: rgba(120, 180, 255, 0.2);
@@ -135,10 +136,7 @@ body {
 }
 
 
-button{
-    width: auto;
-    
-}
+/* keep default sizing for other buttons like .neu-button */
 
 
 .neu-button {
