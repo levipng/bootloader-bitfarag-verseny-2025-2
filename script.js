@@ -1,13 +1,13 @@
 const gombokDiv = document.getElementById('gombok');
 let modeV = 0;
 let matrix;
+let novelesV = 5;
 
 let urhajoV = 0;
 let meglevoV = 0;
 let megnyomottgombokV = 0;
-let lephetoV = 40;
+let lephetoV = 35;
 let bealloV = 0;
-let novelesV = 7;
 
 uj();
 
@@ -15,9 +15,8 @@ function uj(){
     urhajoV = 0;
     meglevoV = 0;
     megnyomottgombokV = 0;
-    lephetoV = 40;
+    lephetoV = 35;
     bealloV = 0;
-    novelesV = 7;
 
     gombnyomas();
     urhajokiiro();
@@ -255,7 +254,7 @@ function urhajokiiro(){
 function plusz(){
     if (urhajoV%4==0 && urhajoV!=0 && modeV==1 && bealloV!=urhajoV){
         lephetoV=lephetoV+novelesV
-        document.getElementById("pluszlepesek").innerText = `+5 lépés`
+        document.getElementById("pluszlepesek").innerText = `+` + novelesV + ' lépés'
         document.getElementById("pluszlepesek").style.display = "flex"
         bealloV = urhajoV;
         document.getElementById("hatralevolepesek").innerText = "Hátralévő lépések: " + lephetoV;
